@@ -6,8 +6,8 @@ get_summary_info_apple <- function(apple_cleaned) {
   summary_apple <- apple_cleaned %>%
     group_by(Category) %>%
     summarise(
-      count = length(Category),
-      money_made = sum(price, na.rm = TRUE)
+    count = length(Category),
+    money_made = sum(price, na.rm = TRUE)
     ) %>%
     arrange(desc(count))
   ret_category <- as.character(summary_apple[1, 1])

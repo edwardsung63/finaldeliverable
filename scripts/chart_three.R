@@ -75,28 +75,44 @@ apple_rating_17 <- age_rating_apple %>% filter(new_content_rating == "17")
 apple_pie <- plot_ly()
 apple_pie <- apple_pie %>%
   add_pie(
+<<<<<<< HEAD
     data = apple_rating_4, labels = ~Category,
+=======
+    data = apple_rating_4, labels = ~prime_genre,
+>>>>>>> 571443f2a21aec18faf9f25ffe7b154120a6d8ec
     values = ~amount_spent, textposition = "inside", name = "4+",
     domain = list(row = 0, column = 0)
   ) %>%
   layout(annotations = a)
 apple_pie <- apple_pie %>%
   add_pie(
+<<<<<<< HEAD
     data = apple_rating_9, labels = ~Category,
+=======
+    data = apple_rating_9, labels = ~prime_genre,
+>>>>>>> 571443f2a21aec18faf9f25ffe7b154120a6d8ec
     values = ~amount_spent, textposition = "inside", name = "9+",
     domain = list(row = 0, column = 1)
   ) %>%
   layout(annotations = b)
 apple_pie <- apple_pie %>%
   add_pie(
+<<<<<<< HEAD
     data = apple_rating_12, labels = ~Category,
+=======
+    data = apple_rating_12, labels = ~prime_genre,
+>>>>>>> 571443f2a21aec18faf9f25ffe7b154120a6d8ec
     values = ~amount_spent, textposition = "inside", name = "12+",
     domain = list(row = 1, column = 0)
   ) %>%
   layout(annotations = c)
 apple_pie <- apple_pie %>%
   add_pie(
+<<<<<<< HEAD
     data = apple_rating_17, labels = ~Category,
+=======
+    data = apple_rating_17, labels = ~prime_genre,
+>>>>>>> 571443f2a21aec18faf9f25ffe7b154120a6d8ec
     values = ~amount_spent, textposition = "inside", name = "17+",
     domain = list(row = 1, column = 1)
   ) %>%
@@ -168,6 +184,7 @@ google_pie <- google_pie %>% layout(
   ),
   uniformtext = list(minsize = 12, mode = "hide")
 )
+<<<<<<< HEAD
 
 pie_function <- function(app_store, age_group) {
   if (age_group == "4" && app_store == "google") {
@@ -194,3 +211,5 @@ pie_function <- function(app_store, age_group) {
 
 return(fig)
 }
+=======
+>>>>>>> 571443f2a21aec18faf9f25ffe7b154120a6d8ec
