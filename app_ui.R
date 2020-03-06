@@ -14,7 +14,7 @@ main <- fluidPage(
 
 ui <- navbarPage("INFO 201 Final",
   tabPanel("Main table", main),
-  tabPanel("tab 1", tab_1),
+  tabPanel("Pie Chart", tab_1),
   tabPanel("tab 2", h1("test tab 2"))
 )
 
