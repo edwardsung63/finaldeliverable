@@ -1,5 +1,6 @@
 library(shiny)
 
+source("scripts/chart_three.R")
 source("app_server.R")
 source("app_ui.R")
 

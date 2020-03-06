@@ -1,7 +1,32 @@
-tab_1 <- sidebarLayout(
-  sidebarPanel(h1("This is a main sidebar")),
-  mainPanel(h1("This is the main panel"))
+tab_1_options <- sidebarPanel(
+  selectInput(
+    "mapvar",
+    label = "Age Group",
+    choices = list(
+      "Ages 4+" = "4",
+      "Ages 9+" = "9",
+      "Ages 12+" = "12",
+      "Ages 17+" = "17"
+    )
+  ),
+  selectInput(
+    "test",
+    label = "Appstore Selection",
+    choices = list(
+      "Google" = "google",
+      "Apple" = "apple"
+    )
+  )
 )
+
+tab_1_main <- mainPanel(
+  plotlyOutput("pie")
+)
+
+tab_1 <-  sidebarLayout(
+    tab_1_options,
+    tab_1_main
+  )
 
 main <- fluidPage(
   h1("Hello App"),

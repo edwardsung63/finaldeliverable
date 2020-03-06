@@ -1,0 +1,87 @@
+---
+title: "Final Project"
+output: html_document
+Group Name: "*GrOuP* **NAmE**"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+source("scripts/sum_table.R")
+source("scripts/chart_one.R")
+source("scripts/chart_two.R")
+source("scripts/chart_three.R")
+source("scripts/appStoreFunc.R")
+source("scripts/googlePlayFunc.R")
+source("scripts/app_cleaned.R")
+source("scripts/google_cleaned.R")
+```
+
+## Introduction
+
+As a result of smartphones slowly becoming a crucial part of modern day society, the demand for mobile applications has increased greatly. The number of apps on the App Stores has been expanding at an increased rate due to app developers constantly publishing apps to meet demand. According to Apple and Google, in 2019, there are 2.2 million and 2.8 million apps available for download on their respective app stores.
+We have downloaded two different datasets “Mobile App Store” (collected July 2017)  and “Google Play Store Apps”(April 2019). These two data sets contain information regarding apps on the Apple App Store and Google Play Store such as price, rating, genre, size, and content rating. 
+People that own a smartphone device have their own unique conglomeration of different types of apps based on their interests and personality, making it more important to find trends in mobile apps to aid in the creation of successful apps. We will be analyzing and comparing the previously mentioned data sets to determine what makes an app successful on the different app stores. This data will create useful mobile app analytics to help developers understand existing strategies and categories that drive growth and retention of future app users.
+
+## Summary Information
+The category with the most apps created in the Google Play Store is "`r google_list[1]`" with a count of `r google_list[2]`, which generated \$`r google_list[3]` in sales. The category that had the least number of apps is "`r google_list[5]`" with a count of `r google_list[6]`, which generated \$`r google_list[7]` in sales. There is `r google_list[4]` unique categories within the dataset. For the Apple App Store it's "`r apple_list[1]`" with a count of `r apple_list[2]`, which generated \$`r apple_list[3]` in sales. The category that had the least number of apps is "`r apple_list[5]`" with a count of `r apple_list[6]`, which generated \$`r apple_list[7]` in sales. There is `r apple_list[4]` unique categories within the dataset. This tells us that these are the most heavily saturated categories in each respective app stores, resulting in it being more difficult for apps to gain popularity and stand out in these categories. This should give a glimpse at what categories are currently popular and which genres to avoid if the purpose is to make money.
+
+## Table of Aggregated Data
+For both app stores we have aggregated the individual apps in each data set into their corresponding categories. Then we calculated the average rating, average price, and number of applications in those categories. We created two summary tables one for each app store, allowing us to compare and dictate which type of apps are more successful in the different app stores. These tables contained information that was similar in both stores which allows for an easier comparison.
+
+### Google Play Store
+`r kable(google_table)`
+
+This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Google Play Store. From this data we can see that "`r google_table[1,1]`" contains the most number of applications for the specified category containing `r google_table[1,5]` different applications. The average price per app in this category including free applications is \$`r google_table[1,3]` and the average price per app excluding free applications is \$`r google_table[1,4]`. This category had an average rating of `r google_table[1,2]`.
+
+The category that had the least number of applications within it is "`r google_table[49,1]`" containing `r google_table[49,5]` different applications. This category has an average price per app including free applications at \$`r google_table[49,3]` and the average price per app excluding free applications is \$`r google_table[49,4]`. This category had an average rating of `r google_table[49,2]`.
+
+
+### Apple App Store
+`r kable(apple_table)`
+
+This table contains information that was calculated such as the average rating per category, average price per category and how many applications per category for the Apple App Store. From this data we can see that "`r apple_table[1,1]`" contains the most number of applications for the specified category containing `r apple_table[1,5]` different applications. The average price per app in this category including free applications is \$`r apple_table[1,3]` and the average price per app excluding free applications is \$`r apple_table[1,4]`. This category had an average rating of `r apple_table[1,2]`.
+
+The category that had the least number of applications within it is "`r apple_table[23,1]`" containing `r apple_table[23,5]` different applications. This category has an average price per app including free applications at \$`r apple_table[23,3]` and the average price per app excluding free applications is \$`r apple_table[23,4]`. This category had an average rating of `r apple_table[23,2]`.
+
+After we summarized the individual app data from the data sets into a table, we have calculated the average rating, average price, average price excluding free applications and the number of applications for each category in both data sets. The category column contains the available categories given to app developers by Google and Apple that sort the type of app uploaded. The average rating column calculates the average ratings based on the apps in the category. For the average price of each category two different values were calculated. Overall Average Price is the total average price of apps in the category including free apps, which are counted as $0. While in average paid price the free apps are filtered out, so it is just the average price of all paid apps in that category. The count column is the number of apps in each category. By using this data we are able to quickly find comparisons such as which categories have the best ratings from consumer satisfaction, which category has the highest listing price, and which category is the most saturated. These data comparisons will help app developers determine the factors that affect the success of an app. While also providing useful insights based on the intent of developer.
+
+## Visualizations
+### Plot 1
+```{r, echo=FALSE}
+plot_one_google
+```
+
+```{r, echo=FALSE}
+plot_one_apple
+```
+
+For this plot we created a bar chart for both Google Play Store and Apple App Store that shows the number of applications that were uploaded into each category. This chart was included to visually show which categories were more saturated with apps. For the Google Play Store it was “Education” and for the Apple App Store it was “Games”. Using these charts app developers are able to determine which genre of apps they should be developing for. Since the categories that are heavily saturated with the same types of apps will make it harder for individual apps to stand out amongst the others. The app will become lost amid the sea of similar apps making it difficult to find on each respective app store, ultimately impacting the number of downloads and revenue it will receive. 
+
+### Plot 2
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+plot_two_google
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+plot_two_apple
+```
+
+This scatter plot is created to show the correlation between the average listing price and the average rating of apps. The listing price of apps will affect whether someone is willing to download that app, if the price is too high that will usually result in people not downloading the app. By using this plot developers are able to see how satisfied people are in comparison with the listed price to determine what price to list their apps to maximize the chances of success.
+
+For the Google Play Store we can see that games tend to cost more while also obtaining high ratings. Applications that were cheap and also had high ratings were applications within the books and reference category.
+
+For the Apple App Store, applications in the medical category tend to cost a lot more than other categories but were also rated low. This could be that medical information is highly profitable but were not meeting to the consumers needs. Apps that did well in ratings were also lower priced. These categories were productivity and music.
+
+### Plot 3
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+google_pie
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+apple_pie
+```
+
+The reason why we created pie chart is to show the distributions of spending on apps in different age groups. As the size and proportion showed by pie charts, we can easily get the idea of which category attracts relatively more or less people. As we can see from the charts, top few categories in Google Play Store are mostly education apps for ages 4+, games apps for ages 12+, sports apps for ages 9+ and 17+. For the education apps downloaded by ages 4+, we can assume that parents or gaurdians might be the users who download the apps for their kids. For the Google Play Store pie chart, we can see that there are a lot more categories than that in the Apple pie chart. Most of them seem repeated a subcategory of the main category.
+
+For the Apple App Store pie chart data, it also follows a similar trend where for ages 4+ a majority of spending is towards the education or games category. It mirrors what we described that parents buy educational apps to encourage early learning. We can see that at ages 9+, 12+, and 17+, that games have become a huge spending category. For ages 17+, they tend to spend more towards productivity, social networking, food and drinks than their younger counterparts.
