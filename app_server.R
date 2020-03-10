@@ -47,4 +47,31 @@ server <- function(input, output) {
     fig <- ggplotly(fig)
     fig <- fig %>% layout(xaxis = list(title = ~Category, tickangle = 270))
   })
+  output$scatter <- renderPlotly({
+    if (input$app_store_3 == "apple") {
+      data <- apple_table
+    } else {
+      data <- google_table
+    }
+    data <- data %>% filter(count >= input$count_2)
+    fig <- plot_ly(
+      data,
+      x = ~avg_rating, y = ~eval(parse(text = input$paid_free)),
+      # Hover text:
+      text = ~ paste(
+        "Category: ", Category,
+        "<br>Average rating: ", avg_rating,
+        "<br>Average price:", eval(parse(text = input$paid_free)),
+        "<br>Total number of applications: ", count
+      ),
+      color = ~eval(parse(text = input$paid_free)), size = ~eval(parse(text = input$paid_free))
+    )
+    fig <- fig %>%
+      layout(title = paste0("Average Rating vs ", 
+                            str_to_title(str_replace_all(input$paid_free, "_", " ")),
+                            " per category (", str_to_title(input$app_store_3), ")"),
+             yaxis = list(title = str_to_title(str_replace_all(input$paid_free, "_", " "))),
+             xaxis = list(title = "Average Rating"),
+             showlegend = FALSE)
+  })
 }
