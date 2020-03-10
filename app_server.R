@@ -23,10 +23,15 @@ server <- function(input, output) {
       data <- age_rating_google %>% filter(new_content == input$age_group)
     }
 
-    fig <- plot_ly(data, labels = ~Category, values = ~amount_spent,
-                   type = "pie", textposition = "inside", name = "4+")
+    fig <- plot_ly(data,
+      labels = ~Category, values = ~amount_spent,
+      type = "pie", textposition = "inside", name = "4+"
+    )
     fig <- fig %>% layout(
-      title = paste0("Spending habits of people ", input$age_group, "+"),
+      title = paste0(
+        "Spending habits of people ", input$age_group,
+        "+", " (", str_to_title(input$app_store), ")"
+      ),
       xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
       yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE)
     )
@@ -42,8 +47,10 @@ server <- function(input, output) {
       data = data,
       aes(fill = count, x = Category, y = count)
     ) +
-      ggtitle(paste0("Amount of applications per category (",
-                     str_to_title(input$app_store_2), ")")) +
+      ggtitle(paste0(
+        "Amount of applications per category (",
+        str_to_title(input$app_store_2), ")"
+      )) +
       ylab("Number of applications") +
       xlab("Category") +
       geom_bar(stat = "identity", width = 0.8)
@@ -71,14 +78,22 @@ server <- function(input, output) {
         "<br>Average price:", eval(parse(text = input$paid_free)),
         "<br>Total number of applications: ", count
       ),
-      color = ~eval(parse(text = input$paid_free)), size = ~eval(parse(text = input$paid_free)),
+      color = ~ eval(parse(text = input$paid_free)),
+      size = ~ eval(parse(text = input$paid_free)),
       scatter = m
-    ) %>% 
-      colorbar(title="Price in $USD") %>%
-      layout(title = paste0("Average Rating vs ", 
-                            str_to_title(str_replace_all(input$paid_free, "_", " ")),
-                            " per category (", str_to_title(input$app_store_3), ")"),
-             yaxis = list(title = str_to_title(str_replace_all(input$paid_free, "_", " "))),
-             xaxis = list(title = "Average Rating"))
+    ) %>%
+      colorbar(title = "Price in $USD") %>%
+      layout(
+        title = paste0(
+          "Average Rating vs ",
+          str_to_title(str_replace_all(input$paid_free, "_", " ")),
+          " per category (", str_to_title(input$app_store_3), ")"
+        ),
+        yaxis = list(
+          title =
+            str_to_title(str_replace_all(input$paid_free, "_", " "))
+        ),
+        xaxis = list(title = "Average Rating")
+      )
   })
 }
