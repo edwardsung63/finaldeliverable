@@ -8,7 +8,7 @@ server <- function(input, output) {
     msg <- paste0("Hi there, ", input$username, "!")
     return(msg)
   })
-
+  # chart one
   output$pie <- renderPlotly({
     if (input$app_store == "apple") {
       age_rating_apple <- apple_cleaned %>%
@@ -35,6 +35,7 @@ server <- function(input, output) {
       yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE)
     )
   })
+  # chart 2
   output$histogram <- renderPlotly({
     if (input$app_store_2 == "apple") {
       data <- apple_table
@@ -57,6 +58,7 @@ server <- function(input, output) {
     fig <- ggplotly(fig)
     fig <- fig %>% layout(xaxis = list(title = ~Category, tickangle = 270))
   })
+  # chart three
   output$scatter <- renderPlotly({
     m <- list(
       colorbar = list(title = "Typing Rate")
