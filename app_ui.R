@@ -200,12 +200,19 @@ member_main <- fluidPage(
   tags$div(h3("Edward Sung")),
   tags$p("Hello, my name is Edward. I am currently a sophomore at UW.
          My intended major is Informatics.
-         Fun Facts: Please subscribe my Yotube Channel and follow my
+         Fun Facts: Please subscribe my Youtube Channel and follow my
          photography account: edwardphotholic."),
   tags$img(src = "./photos/IMG_6860 2.jpg", width = 600, height = 400),
   # member 3
   tags$div(h3("Alex")),
-  tags$p(""),
+  tags$p("Hi! My name is Alex. I am currently a senior at the 
+         University Washington. I am a Interdisciplinary Visual
+         Arts major with a minor in DXARTS, Informatics, and
+         Art History. 
+         Fun Facts: I am a travel filmmaker and photographer and
+         currently the lead creative videographer/photographer at
+         UW Recreation. Checkout my Instagram: @Alex._Chen"),
+  tags$img(src = "./photos/Alex.jpg", width = 600, height = 400),
   # member 4
   tags$div(h3("Rhea")),
   tags$p("")
