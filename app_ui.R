@@ -15,8 +15,8 @@ main <- fluidPage(
          becoming a crucial part of modern day society,
          the demand for mobile applications has increased
          greatly. We have downloaded two different datasets
-         “Mobile App Store” (collected July 2017) and “Google
-         Play Store Apps”(April 2019). These two data sets
+         'Mobile App Store' (collected July 2017) and 'Google
+         Play Store Apps' (April 2019). These two data sets
          contain information regarding apps on the Apple App
          Store and Google Play Store such as price, rating,
          genre, size, and content rating. We will be analyzing
