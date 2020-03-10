@@ -36,11 +36,14 @@ main <- fluidPage(
   ),
   textOutput(outputId = "out_message")
 )
-
-ui <- navbarPage("INFO 201 Final",
-  tabPanel("Main table", main),
-  tabPanel("Pie Chart", tab_1),
-  tabPanel("tab 2", h1("test tab 2"))
+library(shinythemes) 
+ui <- fluidPage(
+  theme = shinytheme("superhero"),
+  navbarPage("INFO 201 Final",
+    tabPanel("Main table", main),
+    tabPanel("Pie Chart", tab_1),
+    tabPanel("tab 2", h1("test tab 2"))
+    )
 )
 
 
