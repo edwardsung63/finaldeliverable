@@ -28,10 +28,8 @@ server <- function(input, output) {
       type = "pie", textposition = "inside", name = "4+"
     )
     fig <- fig %>% layout(
-      title = paste0(
-        "Spending habits of people ", input$age_group,
-        "+", " (", str_to_title(input$app_store), ")"
-      ),
+      title = paste0("Spending habits of people ", input$age_group, 
+                     "+", " (", str_to_title(input$app_store), ")"),
       xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
       yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE)
     )
@@ -78,7 +76,7 @@ server <- function(input, output) {
         "<br>Average price:", eval(parse(text = input$paid_free)),
         "<br>Total number of applications: ", count
       ),
-      color = ~ eval(parse(text = input$paid_free)),
+      color = ~ eval(parse(text = input$paid_free)), 
       size = ~ eval(parse(text = input$paid_free)),
       scatter = m
     ) %>%
@@ -89,10 +87,8 @@ server <- function(input, output) {
           str_to_title(str_replace_all(input$paid_free, "_", " ")),
           " per category (", str_to_title(input$app_store_3), ")"
         ),
-        yaxis = list(
-          title =
-            str_to_title(str_replace_all(input$paid_free, "_", " "))
-        ),
+        yaxis = list(title = 
+                       str_to_title(str_replace_all(input$paid_free, "_", " "))),
         xaxis = list(title = "Average Rating")
       )
   })

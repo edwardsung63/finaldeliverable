@@ -151,8 +151,8 @@ conclu_tab <- mainPanel(
          were uploaded into each category. This chart
          was included to visually show which categories
          were more saturated with apps. For the Google
-         Play Store it was “Education” and for the Apple
-         App Store it was “Games”. Using these charts app
+         Play Store it was 'Education' and for the Apple
+         App Store it was 'Games'. Using these charts app
          developers are able to determine which genre of
          apps they should be developing for. Since the
          categories that are heavily saturated with the
