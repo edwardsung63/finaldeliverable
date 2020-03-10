@@ -104,14 +104,22 @@ tab_2 <- sidebarLayout(
 # )
 ########################################
 ########################################
+# conclusion tab 
+conclu_tab <- mainPanel(
+  tags$div(h1("Conclusion"))
+)
+
+########################################
+########################################
 library(shinythemes) 
 ui <- fluidPage(
   theme = shinytheme("superhero"),
   navbarPage("INFO 201 Final",
     tabPanel("Main table", main),
     tabPanel("Pie Chart", tab_1),
-    tabPanel("Histogram", tab_2)
+    tabPanel("Histogram", tab_2),
     #tabPanel("Scatterplot", tab_3)
+    tabPanel("Conclusion", conclu_tab)
     )
 )
 
