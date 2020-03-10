@@ -10,8 +10,23 @@ main <- fluidPage(
     label = h3("Type in your name")
     
   ),
-  textOutput(outputId = "out_message")
-  
+  textOutput(outputId = "out_message"),
+  tags$div(h2("Introduction")),
+  tags$p(sep = "\n", "As a result of smartphones slowly 
+         becoming a crucial part of modern day society, 
+         the demand for mobile applications has increased 
+         greatly. We have downloaded two different datasets 
+         “Mobile App Store” (collected July 2017) and “Google 
+         Play Store Apps”(April 2019). These two data sets 
+         contain information regarding apps on the Apple App 
+         Store and Google Play Store such as price, rating, 
+         genre, size, and content rating. We will be analyzing 
+         and comparing the previously mentioned data sets to 
+         determine what makes an app successful on the different 
+         app stores. This data will create useful mobile app 
+         analytics to help developers understand existing strategies 
+         and categories that drive growth and retention of 
+         future app users.")
 )
 ########################################
 ########################################
