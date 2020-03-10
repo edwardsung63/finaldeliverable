@@ -12,4 +12,7 @@ server <- function(input, output) {
     test <- pie_function(input$test, input$mapvar)
     return(test)
   })
+  output$histogram <- renderPlot({
+    #chart 1
+  })
 }
