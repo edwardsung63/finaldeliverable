@@ -31,7 +31,8 @@ server <- function(input, output) {
       title = paste0("Spending habits of people ", input$age_group, 
                      "+", " (", str_to_title(input$app_store), ")"),
       xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-      yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE)
+      yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+      paper_bgcolor='#8CACC0'
     )
   })
   output$histogram <- renderPlotly({
@@ -54,7 +55,8 @@ server <- function(input, output) {
       geom_bar(stat = "identity", width = 0.8)
 
     fig <- ggplotly(fig)
-    fig <- fig %>% layout(xaxis = list(title = ~Category, tickangle = 270))
+    fig <- fig %>% layout(xaxis = list(title = ~Category, tickangle = 270),
+                          paper_bgcolor='#8CACC0')
   })
   output$scatter <- renderPlotly({
     m <- list(
@@ -89,7 +91,8 @@ server <- function(input, output) {
         ),
         yaxis = list(title = 
                        str_to_title(str_replace_all(input$paid_free, "_", " "))),
-        xaxis = list(title = "Average Rating")
+        xaxis = list(title = "Average Rating"),
+        paper_bgcolor='#8CACC0'
       )
   })
 }

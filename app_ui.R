@@ -59,7 +59,32 @@ tab_1_options <- sidebarPanel(
 )
 
 tab_1_main <- mainPanel(
-  plotlyOutput("pie")
+  plotlyOutput("pie"),
+  tags$p("The reason why we created pie chart is to
+  show the distributions of spending on apps in
+  different age groups. As the size and proportion
+  showed by pie charts, we can easily get the idea
+  of which category attracts relatively more or less
+  people. As we can see from the charts, top few
+  categories in Google Play Store are mostly education
+  apps for ages 4+, games apps for ages 12+, sports apps
+  for ages 9+ and 17+. For the education apps downloaded
+  by ages 4+, we can assume that parents or gaurdians
+  might be the users who download the apps for their kids.
+  For the Google Play Store pie chart, we can see that there
+  are a lot more categories than that in the Apple pie chart.
+  Most of them seem repeated a subcategory of the main category.
+  "),
+  tags$p("For the Apple App Store pie chart data, it
+         also follows a similar trend where for ages 4+ a
+         majority of spending is towards the education or
+         games category. It mirrors what we described that
+         parents buy educational apps to encourage early
+         learning. We can see that at ages 9+, 12+, and 17+,
+         that games have become a huge spending category.
+         For ages 17+, they tend to spend more towards
+         productivity, social networking, food and drinks
+         than their younger counterparts.")
 )
 
 tab_1 <- sidebarLayout(
@@ -80,7 +105,24 @@ tab_2_content <- sidebarPanel(
                total applications:", 1, min = 1, max = 30000)
 )
 tab_2_main <- mainPanel(
-  plotlyOutput("histogram")
+  plotlyOutput("histogram"),
+  tags$p("For this plot we created a bar chart for
+         both Google Play Store and Apple App Store
+         that shows the number of applications that
+         were uploaded into each category. This chart
+         was included to visually show which categories
+         were more saturated with apps. For the Google
+         Play Store it was 'Education' and for the Apple
+         App Store it was 'Games'. Using these charts app
+         developers are able to determine which genre of
+         apps they should be developing for. Since the
+         categories that are heavily saturated with the
+         same types of apps will make it harder for
+         individual apps to stand out amongst the others.
+         The app will become lost amid the sea of similar
+         apps making it difficult to find on each respective
+         app store, ultimately impacting the number of
+         downloads and revenue it will receive.")
 )
 tab_2 <- sidebarLayout(
   tab_2_content,
@@ -107,62 +149,7 @@ tab_3_content <- sidebarPanel(
                total applications:", 1, min = 1, max = 30000)
 )
 tab_3_main <- mainPanel(
-  plotlyOutput("scatter")
-)
-tab_3 <- sidebarLayout(
-  tab_3_content,
-  tab_3_main
-)
-########################################
-########################################
-# conclusion tab
-conclu_tab <- mainPanel(
-  tags$div(h1("Conclusion")),
-  tags$div(h3("Pie Chart")),
-  tags$p("The reason why we created pie chart is to
-  show the distributions of spending on apps in
-  different age groups. As the size and proportion
-  showed by pie charts, we can easily get the idea
-  of which category attracts relatively more or less
-  people. As we can see from the charts, top few
-  categories in Google Play Store are mostly education
-  apps for ages 4+, games apps for ages 12+, sports apps
-  for ages 9+ and 17+. For the education apps downloaded
-  by ages 4+, we can assume that parents or gaurdians
-  might be the users who download the apps for their kids.
-  For the Google Play Store pie chart, we can see that there
-  are a lot more categories than that in the Apple pie chart.
-  Most of them seem repeated a subcategory of the main category.
-  "),
-  tags$p("For the Apple App Store pie chart data, it
-         also follows a similar trend where for ages 4+ a
-         majority of spending is towards the education or
-         games category. It mirrors what we described that
-         parents buy educational apps to encourage early
-         learning. We can see that at ages 9+, 12+, and 17+,
-         that games have become a huge spending category.
-         For ages 17+, they tend to spend more towards
-         productivity, social networking, food and drinks
-         than their younger counterparts."),
-  tags$div(h3("Histogram Chart")),
-  tags$p("For this plot we created a bar chart for
-         both Google Play Store and Apple App Store
-         that shows the number of applications that
-         were uploaded into each category. This chart
-         was included to visually show which categories
-         were more saturated with apps. For the Google
-         Play Store it was 'Education' and for the Apple
-         App Store it was 'Games'. Using these charts app
-         developers are able to determine which genre of
-         apps they should be developing for. Since the
-         categories that are heavily saturated with the
-         same types of apps will make it harder for
-         individual apps to stand out amongst the others.
-         The app will become lost amid the sea of similar
-         apps making it difficult to find on each respective
-         app store, ultimately impacting the number of
-         downloads and revenue it will receive."),
-  tags$div(h3("Scatter Plot")),
+  plotlyOutput("scatter"),
   tags$p("This scatter plot is created to show the
           correlation between the average listing price and
           the average rating of apps. The listing price of apps
@@ -183,6 +170,19 @@ conclu_tab <- mainPanel(
           to the consumers needs. Apps that did well in ratings
          were also lower priced. These categories were
          productivity and music.")
+)
+tab_3 <- sidebarLayout(
+  tab_3_content,
+  tab_3_main
+)
+########################################
+########################################
+# conclusion tab
+conclu_tab <- mainPanel(
+  tags$div(h1("Conclusion")),
+  tags$div(h3("Pie Chart")),
+  tags$div(h3("Histogram Chart")),
+  tags$div(h3("Scatter Plot"))
 )
 
 ########################################
