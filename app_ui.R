@@ -1,3 +1,15 @@
+library(ggplot2)
+
+main <- fluidPage(
+  h1("Hello App"),
+  textInput(
+    inputId = "username",
+    label = h3("Type in your name")
+  ),
+  textOutput(outputId = "out_message")
+)
+########################################
+########################################
 tab_1_options <- sidebarPanel(
   selectInput(
     "mapvar",
@@ -27,22 +39,23 @@ tab_1 <-  sidebarLayout(
     tab_1_options,
     tab_1_main
   )
-
-main <- fluidPage(
-  h1("Hello App"),
-  textInput(
-    inputId = "username",
-    label = h3("Type in your name")
-  ),
-  textOutput(outputId = "out_message")
+########################################
+########################################
+tab_2_content <-
+tab_2_main <- 
+tab_2 <- sidebarLayout(
+  tab_2_content,
+  tab_2_main
 )
+########################################
+########################################
 library(shinythemes) 
 ui <- fluidPage(
   theme = shinytheme("superhero"),
   navbarPage("INFO 201 Final",
     tabPanel("Main table", main),
     tabPanel("Pie Chart", tab_1),
-    tabPanel("tab 2", h1("test tab 2"))
+    tabPanel("Histogram", tab_2)
     )
 )
 
