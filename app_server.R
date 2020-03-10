@@ -1,6 +1,5 @@
 library(plotly)
 library(ggplot2)
-#("./scripts/chart_three.R")
 
 server <- function(input, output) {
   output$out_message <- renderText({

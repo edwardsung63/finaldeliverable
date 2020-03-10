@@ -51,7 +51,9 @@ tab_2_content <- sidebarPanel(
   ),
   selectInput("selection",
               label = h3("select box"),
-              choices = ,
+              choices = list(
+                "1" = 1
+              ),
               selected = 1)
 )
 tab_2_main <- mainPanel(
