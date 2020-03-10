@@ -1,3 +1,4 @@
+# load libraries 
 library(plotly)
 library(ggplot2)
 library(stringr)
@@ -7,7 +8,7 @@ server <- function(input, output) {
     msg <- paste0("Hi there, ", input$username, "!")
     return(msg)
   })
-
+  # chart one
   output$pie <- renderPlotly({
     if (input$app_store == "apple") {
       age_rating_apple <- apple_cleaned %>%
@@ -35,6 +36,7 @@ server <- function(input, output) {
       paper_bgcolor='#8CACC0'
     )
   })
+  # chart 2
   output$histogram <- renderPlotly({
     if (input$app_store_2 == "apple") {
       data <- apple_table
@@ -58,6 +60,7 @@ server <- function(input, output) {
     fig <- fig %>% layout(xaxis = list(title = ~Category, tickangle = 270),
                           paper_bgcolor='#8CACC0')
   })
+  # chart three
   output$scatter <- renderPlotly({
     m <- list(
       colorbar = list(title = "Typing Rate")
