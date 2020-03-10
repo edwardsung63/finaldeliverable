@@ -12,7 +12,7 @@ main <- fluidPage(
 ########################################
 tab_1_options <- sidebarPanel(
   selectInput(
-    "mapvar",
+    "age_group",
     label = "Age Group",
     choices = list(
       "Ages 4+" = "4",
@@ -22,7 +22,7 @@ tab_1_options <- sidebarPanel(
     )
   ),
   selectInput(
-    "test",
+    "app_store",
     label = "Appstore Selection",
     choices = list(
       "Google" = "google",
@@ -43,21 +43,16 @@ tab_1 <-  sidebarLayout(
 ########################################
 tab_2_content <- sidebarPanel(
   radioButtons(
-    inputId = "xx",
-    label = h3("radio buttons"),
+    inputId = "app_store_2",
+    label = h3("Which app store?"),
     choices = list(
-      "A" = 1, "B" = 2, "C" = 3
+      "Apple" = "apple", "Google" = "google"
     )
   ),
-  selectInput("selection",
-              label = h3("select box"),
-              choices = list(
-                "1" = 1
-              ),
-              selected = 1)
+  numericInput("count", "Categories with more than:", 1, min = 1, max = 30000)
 )
 tab_2_main <- mainPanel(
-  plotOutput("histogram")
+  plotlyOutput("histogram")
 )
 tab_2 <- sidebarLayout(
   tab_2_content,

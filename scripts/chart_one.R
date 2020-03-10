@@ -5,6 +5,16 @@ library(ggpubr)
 
 source("./scripts/sum_table.R")
 
+data <- google_table %>% filter(count >= 1)
+fig <- ggplot(
+  data = data,
+  aes(fill = count, x = Category, y = count)
+) +
+  ggtitle(paste0("Amount of applications per category (google)")) +
+  ylab("Number of applications") +
+  xlab("Category") +
+  geom_bar(stat = "identity", width = 0.8)
+
 plot_one_google <- ggplot(
   data = google_table,
   aes(fill = count, x = Category, y = count)
