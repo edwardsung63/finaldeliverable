@@ -178,11 +178,35 @@ conclu_tab <- mainPanel(
 
 ########################################
 ########################################
+# about us 
+member_main <- fluidPage(
+  tags$div(h1("About US")),
+  tags$div(h2("Team name: \" *GrOuP **NAmE** \" ")),
+  # member 1
+  tags$div(h3("Danell")), 
+  tags$p(""),
+  # member 2
+  tags$div(h3("Edward Sung")),
+  tags$p("Hello, my name is Edward. I am currenly a sophomore at UW. 
+         My intended major is Informatics. 
+         Fun Facts: Please subscribe my Yotube Channel and follow my
+         photography account: edwardphotholic."),
+  tags$img(src= "./photos/IMG_6860 2.jpg"),
+  # member 3
+  tags$div(h3("Alex")),
+  tags$p(""),
+  # member 4
+  tags$div("Rhea"),
+  tags$p("")
+)
+########################################
+########################################
 library(shinythemes) 
 ui <- fluidPage(
   theme = shinytheme("superhero"),
   navbarPage("INFO 201 Final",
     tabPanel("Main table", main),
+    tabPanel("About us", member_main),
     tabPanel("Pie Chart", tab_1),
     tabPanel("Histogram", tab_2),
     tabPanel("Scatterplot", tab_3),
