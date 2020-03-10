@@ -41,8 +41,22 @@ tab_1 <-  sidebarLayout(
   )
 ########################################
 ########################################
-tab_2_content <-
-tab_2_main <- 
+tab_2_content <- sidebarPanel(
+  radioButtons(
+    inputId = "xx",
+    label = h3("radio buttons"),
+    choices = list(
+      "A" = 1, "B" = 2, "C" = 3
+    )
+  ),
+  selectInput("selection",
+              label = h3("select box"),
+              choices = ,
+              selected = 1)
+)
+tab_2_main <- mainPanel(
+  plotOutput("histogram")
+)
 tab_2 <- sidebarLayout(
   tab_2_content,
   tab_2_main
