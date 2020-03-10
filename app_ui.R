@@ -1,5 +1,7 @@
+# library loaded
 library(ggplot2)
 
+# main page content(breif intro and overview)
 main <- fluidPage(
   tags$div(h1("App Store & Google Play Comparison")),
   tags$img(src = "../img/hive8a4_ios-vs-android-spending-hero.png",
@@ -36,7 +38,9 @@ main <- fluidPage(
 )
 ########################################
 ########################################
+# tab 1 for pie chart
 tab_1_options <- sidebarPanel(
+  # first widget 
   selectInput(
     "age_group",
     label = "Age Group",
@@ -47,6 +51,7 @@ tab_1_options <- sidebarPanel(
       "Ages 17+" = "17"
     )
   ),
+  # second widget
   selectInput(
     "app_store",
     label = "Appstore Selection",
@@ -56,18 +61,20 @@ tab_1_options <- sidebarPanel(
     )
   )
 )
-
+# the main tab on the page 
 tab_1_main <- mainPanel(
   plotlyOutput("pie")
 )
-
+# combining them together
 tab_1 <- sidebarLayout(
   tab_1_options,
   tab_1_main
 )
 ########################################
 ########################################
+# tab 2 for the histogram
 tab_2_content <- sidebarPanel(
+  # first widget
   radioButtons(
     inputId = "app_store_2",
     label = "Which app store?",
@@ -75,19 +82,24 @@ tab_2_content <- sidebarPanel(
       "Apple" = "apple", "Google" = "google"
     )
   ),
+  # second widget
   numericInput("count", "Categories with more than ____
                total applications:", 1, min = 1, max = 30000)
 )
+# main tab on the page
 tab_2_main <- mainPanel(
   plotlyOutput("histogram")
 )
+# conbining two bars together
 tab_2 <- sidebarLayout(
   tab_2_content,
   tab_2_main
 )
 ########################################
 ########################################
+# tab three for scatter plot
 tab_3_content <- sidebarPanel(
+  # first widget
   radioButtons(
     inputId = "app_store_3",
     label = "Which app store?",
@@ -95,6 +107,7 @@ tab_3_content <- sidebarPanel(
       "Apple" = "apple", "Google" = "google"
     )
   ),
+  # second widget
   radioButtons(
     inputId = "paid_free",
     label = ("Include free applications into calculation?"),
@@ -102,12 +115,15 @@ tab_3_content <- sidebarPanel(
       "Yes" = "overall_avg_price", "No" = "paid_avg_price"
     )
   ),
+  # third widget 
   numericInput("count_2", "Categories with more than ____
                total applications:", 1, min = 1, max = 30000)
 )
+# main tab on the page
 tab_3_main <- mainPanel(
   plotlyOutput("scatter")
 )
+# conbining them together
 tab_3 <- sidebarLayout(
   tab_3_content,
   tab_3_main
@@ -218,6 +234,7 @@ member_main <- fluidPage(
 )
 ########################################
 ########################################
+# adding theme for the shinyApp interface
 library(shinythemes)
 ui <- fluidPage(
   theme = shinytheme("superhero"),
