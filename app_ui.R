@@ -65,28 +65,28 @@ tab_2 <- sidebarLayout(
 )
 ########################################
 ########################################
-tab_3_content <- sidebarPanel(
-  radioButtons(
-    inputId = "xx",
-    label = h3("radio buttons"),
-    choices = list(
-      "A" = 1, "B" = 2, "C" = 3
-    )
-  ),
-  selectInput("selection",
-              label = h3("select box"),
-              choices = list(
-                "1" = 1
-              ),
-              selected = 1)
-)
-tab_3_main <- mainPanel(
-  plotOutput("histogram")
-)
-tab_3 <- sidebarLayout(
-  tab_3_content,
-  tab_3_main
-)
+# tab_3_content <- sidebarPanel(
+#   radioButtons(
+#     inputId = "xx",
+#     label = h3("radio buttons"),
+#     choices = list(
+#       "A" = 1, "B" = 2, "C" = 3
+#     )
+#   ),
+#   selectInput("selection",
+#               label = h3("select box"),
+#               choices = list(
+#                 "1" = 1
+#               ),
+#               selected = 1)
+# )
+# tab_3_main <- mainPanel(
+#   plotOutput("histogram")
+# )
+# tab_3 <- sidebarLayout(
+#   tab_3_content,
+#   tab_3_main
+# )
 ########################################
 ########################################
 library(shinythemes) 
@@ -95,8 +95,8 @@ ui <- fluidPage(
   navbarPage("INFO 201 Final",
     tabPanel("Main table", main),
     tabPanel("Pie Chart", tab_1),
-    tabPanel("Histogram", tab_2),
-    tabPanel("Scatterplot", tab_3)
+    tabPanel("Histogram", tab_2)
+    #tabPanel("Scatterplot", tab_3)
     )
 )
 

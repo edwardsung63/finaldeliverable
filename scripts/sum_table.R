@@ -19,7 +19,7 @@ get_summary_table_google <- function(google_cleaned) {
       ),
       digits = 2
       ),
-      paid_avg_price = round(mean(replace(price, price == 0, NA),
+      paid_avg_price = round(mean(replace(as.numeric(price), price == 0, NA),
         na.rm = TRUE
       ), digits = 2),
       count = length(Category)
