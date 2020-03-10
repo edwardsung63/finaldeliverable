@@ -1,12 +1,17 @@
 library(ggplot2)
 
 main <- fluidPage(
-  h1("Hello App"),
+  tags$div(h1("App Store & Google Play Comparison")),
+  tags$img(src="https://www.hallmanagementgroup.com/wp-content
+                /uploads/2018/10/google-play-app-store-badges-5926
+                dec63df78cbe7eaf4f9e.jpg"),
   textInput(
     inputId = "username",
     label = h3("Type in your name")
+    
   ),
   textOutput(outputId = "out_message")
+  
 )
 ########################################
 ########################################
