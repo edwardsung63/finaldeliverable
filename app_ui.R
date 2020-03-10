@@ -4,7 +4,8 @@ main <- fluidPage(
   tags$div(h1("App Store & Google Play Comparison")),
   tags$img(src="https://www.hallmanagementgroup.com/wp-content
                 /uploads/2018/10/google-play-app-store-badges-5926
-                dec63df78cbe7eaf4f9e.jpg"),
+                dec63df78cbe7eaf4f9e.jpg", width = 600, height = 400,
+           noWS = NULL),
   textInput(
     inputId = "username",
     label = h3("Type in your name")
@@ -196,7 +197,7 @@ member_main <- fluidPage(
   tags$div(h3("Alex")),
   tags$p(""),
   # member 4
-  tags$div("Rhea"),
+  tags$div(h3("Rhea")),
   tags$p("")
 )
 ########################################
