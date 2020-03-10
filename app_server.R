@@ -48,6 +48,9 @@ server <- function(input, output) {
     fig <- fig %>% layout(xaxis = list(title = ~Category, tickangle = 270))
   })
   output$scatter <- renderPlotly({
+    m <- list(
+      colorbar = list(title = "Typing Rate")
+    )
     if (input$app_store_3 == "apple") {
       data <- apple_table
     } else {
@@ -64,14 +67,14 @@ server <- function(input, output) {
         "<br>Average price:", eval(parse(text = input$paid_free)),
         "<br>Total number of applications: ", count
       ),
-      color = ~eval(parse(text = input$paid_free)), size = ~eval(parse(text = input$paid_free))
-    )
-    fig <- fig %>%
+      color = ~eval(parse(text = input$paid_free)), size = ~eval(parse(text = input$paid_free)),
+      scatter = m
+    ) %>% 
+      colorbar(title="Price in $USD") %>%
       layout(title = paste0("Average Rating vs ", 
                             str_to_title(str_replace_all(input$paid_free, "_", " ")),
                             " per category (", str_to_title(input$app_store_3), ")"),
              yaxis = list(title = str_to_title(str_replace_all(input$paid_free, "_", " "))),
-             xaxis = list(title = "Average Rating"),
-             showlegend = FALSE)
+             xaxis = list(title = "Average Rating"))
   })
 }

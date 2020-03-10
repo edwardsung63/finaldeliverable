@@ -184,10 +184,12 @@ member_main <- fluidPage(
   tags$div(h2("Team name: \" *GrOuP **NAmE** \" ")),
   # member 1
   tags$div(h3("Danell")), 
-  tags$p(""),
+  tags$p("Hello! My name is Danell and I am currently a junior at UW.
+         My intended major is Informatics / Applied Mathematics.
+         Fun Facts: I love playing tennis and video games in my freetime."),
   # member 2
   tags$div(h3("Edward Sung")),
-  tags$p("Hello, my name is Edward. I am currenly a sophomore at UW. 
+  tags$p("Hello, my name is Edward. I am currently a sophomore at UW. 
          My intended major is Informatics. 
          Fun Facts: Please subscribe my Yotube Channel and follow my
          photography account: edwardphotholic."),
@@ -206,11 +208,11 @@ ui <- fluidPage(
   theme = shinytheme("superhero"),
   navbarPage("INFO 201 Final",
     tabPanel("Main table", main),
-    tabPanel("About us", member_main),
     tabPanel("Pie Chart", tab_1),
     tabPanel("Histogram", tab_2),
     tabPanel("Scatterplot", tab_3),
-    tabPanel("Conclusion", conclu_tab)
+    tabPanel("Conclusion", conclu_tab),
+    tabPanel("About us", member_main)
     )
 )
 

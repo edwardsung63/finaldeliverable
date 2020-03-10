@@ -7,6 +7,9 @@ library(plotly)
 
 source("./scripts/sum_table.R")
 
+fig3 <- ggplot(
+  google_table, aes(x = avg_rating, y = overall_paid_price)) +
+  geom_point()
 plot_two_google <- plot_ly(
   google_table,
   x = ~avg_rating, y = ~overall_avg_price,
