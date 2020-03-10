@@ -1,0 +1,12 @@
+name: finaldeliverable
+title: finaldeliverable
+username:
+account: edwardsung
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1931330
+bundleId: 2869171
+url: https://edwardsung.shinyapps.io/finaldeliverable/
+when: 1583876580.91827
+asMultiple: FALSE
+asStatic: FALSE

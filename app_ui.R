@@ -4,8 +4,7 @@ main <- fluidPage(
   tags$div(h1("App Store & Google Play Comparison")),
   tags$img(src="https://www.hallmanagementgroup.com/wp-content
                 /uploads/2018/10/google-play-app-store-badges-5926
-                dec63df78cbe7eaf4f9e.jpg", width = 600, height = 400,
-           noWS = NULL),
+                dec63df78cbe7eaf4f9e.jpg", width = 600, height = 400),
   textInput(
     inputId = "username",
     label = h3("Type in your name")
@@ -192,7 +191,7 @@ member_main <- fluidPage(
          My intended major is Informatics. 
          Fun Facts: Please subscribe my Yotube Channel and follow my
          photography account: edwardphotholic."),
-  tags$img(src= "./photos/IMG_6860 2.jpg"),
+  tags$img(src= "./photos/IMG_6860 2.jpg", width = 600, height = 400),
   # member 3
   tags$div(h3("Alex")),
   tags$p(""),
