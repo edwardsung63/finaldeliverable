@@ -4,8 +4,7 @@ library(ggplot2)
 # main page content(breif intro and overview)
 main <- fluidPage(
   tags$div(h1("App Store & Google Play Comparison")),
-  tags$img(src = "../img/hive8a4_ios-vs-android-spending-hero.png",
-           width = 600, height = 400),
+  tags$img(src = "https://i.ibb.co/wSSv8zQ/f95x3MR.png"),
   textInput(
     inputId = "username",
     label = h3("Type in your name")
@@ -97,7 +96,7 @@ tab_1 <- sidebarLayout(
 )
 ########################################
 ########################################
-# tab 2 for the histogram
+# tab 2 for the bar chart
 tab_2_content <- sidebarPanel(
   # first widget
   radioButtons(
@@ -113,7 +112,7 @@ tab_2_content <- sidebarPanel(
 )
 # main tab on the page
 tab_2_main <- mainPanel(
-  plotlyOutput("histogram"),
+  plotlyOutput("bar_chart"),
   tags$p("For this plot we created a bar chart for
          both Google Play Store and Apple App Store
          that shows the number of applications that
@@ -231,7 +230,7 @@ member_main <- fluidPage(
          My intended major is Informatics.
          Fun Facts: Please subscribe my Youtube Channel and follow my
          photography account: edwardphotholic."),
-  tags$img(src = "./photos/IMG_6860 2.jpg", width = 600, height = 400),
+  tags$img(src = "https://i.ibb.co/b24ddrw/IMG-6860-2.jpg", width = 308, height = 305),
   # member 3
   tags$div(h3("Alex")),
   tags$p("Hi! My name is Alex. I am currently a senior at the 
@@ -241,7 +240,7 @@ member_main <- fluidPage(
          Fun Facts: I am a travel filmmaker and photographer and
          currently the lead creative videographer/photographer at
          UW Recreation. Checkout my Instagram: @Alex._Chen"),
-  tags$img(src = "./photos/Alex.jpg", width = 600, height = 400),
+  tags$img(src = "https://i.ibb.co/Sy3C38H/Alex.jpg", width = 265, height = 332),
   # member 4
   tags$div(h3("Rhea")),
   tags$p("")
@@ -251,15 +250,14 @@ member_main <- fluidPage(
 # adding theme for the shinyApp interface
 library(shinythemes)
 ui <- fluidPage(
-  includeCSS("styles.css"),
   theme = shinytheme("superhero"),
   navbarPage("INFO 201 Final",
   tabPanel("Main table", main),
-  tabPanel("About us", member_main),
   tabPanel("Pie Chart", tab_1),
-  tabPanel("Histogram", tab_2),
+  tabPanel("Bar Chart", tab_2),
   tabPanel("Scatterplot", tab_3),
-  tabPanel("Conclusion", conclu_tab)
+  tabPanel("Conclusion", conclu_tab),
+  tabPanel("About us", member_main)
     )
 
 )

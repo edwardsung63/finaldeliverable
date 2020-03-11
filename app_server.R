@@ -37,7 +37,7 @@ server <- function(input, output) {
     )
   })
   # chart 2
-  output$histogram <- renderPlotly({
+  output$bar_chart <- renderPlotly({
     if (input$app_store_2 == "apple") {
       data <- apple_table
     } else {
