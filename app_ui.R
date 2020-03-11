@@ -34,7 +34,7 @@ main <- fluidPage(
 ########################################
 # tab 1 for pie chart
 tab_1_options <- sidebarPanel(
-  # first widget 
+  # first widget
   selectInput(
     "age_group",
     label = "Age Group",
@@ -55,7 +55,7 @@ tab_1_options <- sidebarPanel(
     )
   )
 )
-# the main tab on the page 
+# the main tab on the page
 tab_1_main <- mainPanel(
   plotlyOutput("pie"),
   tags$p("The pie chart visually shows the distribution of
@@ -88,9 +88,9 @@ tab_2_content <- sidebarPanel(
 # main tab on the page
 tab_2_main <- mainPanel(
   plotlyOutput("bar_chart"),
-  tags$p("A bar chart was created for both Google Play Store 
-          and Apple App Store to show the number of applications 
-          that were uploaded into each category. This chart visually 
+  tags$p("A bar chart was created for both Google Play Store
+          and Apple App Store to show the number of applications
+          that were uploaded into each category. This chart visually
           shows which categories were the most and least app populated.")
 )
 # conbining two bars together
@@ -118,7 +118,7 @@ tab_3_content <- sidebarPanel(
       "Yes" = "overall_avg_price", "No" = "paid_avg_price"
     )
   ),
-  # third widget 
+  # third widget
   numericInput("count_2", "Categories with more than ____
                total applications:", 1, min = 1, max = 30000)
 )
@@ -128,10 +128,9 @@ tab_3_main <- mainPanel(
   tags$p("This scatter plot was created to show the
           correlation between the average listing price and
           the average rating of apps. The listing price of apps
-          is a factor that will affect whether someone is willing 
-          to download that app. 
+          is a factor that will affect whether someone is willing
+          to download that app.
           There is an option to include free apps in the calculation.")
-  
 )
 # conbining them together
 tab_3 <- sidebarLayout(
@@ -154,7 +153,7 @@ conclu_tab <- mainPanel(
           category for age 4+ is education, which shows that parents
           are downloading educational apps for growing children. And
           as the consumer mature's their interests also shifts to
-          Game Role Playing at age 9+, Sports at age 12+, and 
+          Game Role Playing at age 9+, Sports at age 12+, and
           Entertainment at 17+.
           For the Apple App Store at age 4+ the most popular category
           is Games, this could be because parents are giving their
@@ -168,11 +167,11 @@ conclu_tab <- mainPanel(
           be better to develop a game."),
   tags$div(h3("Bar Chart")),
   tags$p("After anaylzing the bar chart the most populated app category
-          in the Google Play Store is the Education category with 32247 
-          apps, and for the Apple App Store it was the Games category 
-          with 3862 apps. By using this bar chart app developers are 
-          able to determine which app category they should develop apps 
-          for. Since the categories that are heavily saturated with apps 
+          in the Google Play Store is the Education category with 32247
+          apps, and for the Apple App Store it was the Games category
+          with 3862 apps. By using this bar chart app developers are
+          able to determine which app category they should develop apps
+          for. Since the categories that are heavily saturated with apps
           will make it harder for individual apps to stand out amongst the
           other apps. The app could become lost amongst the sea of
           similar apps, making it difficult for consumers to find it
@@ -184,13 +183,13 @@ conclu_tab <- mainPanel(
           App Store."),
   tags$div(h3("Scatter Plot")),
   tags$p("The scatter plot shows visually the comparison between the
-          average price of apps and the average rating of apps. 
-          The listing price of apps is a factor that will affect whether 
-          someone is willing to download that app, if the price is too high 
-          it will usually result in less people downloading the app. By 
-          using this plot, developers are able to see how satisfied 
-          people are with the app in comparison with the listed 
-          price to determine the optimal listing price for their apps 
+          average price of apps and the average rating of apps.
+          The listing price of apps is a factor that will affect whether
+          someone is willing to download that app, if the price is too high
+          it will usually result in less people downloading the app. By
+          using this plot, developers are able to see how satisfied
+          people are with the app in comparison with the listed
+          price to determine the optimal listing price for their apps
           to maximize the chances of success.
           In the Google Play Store we can see that the game categories
           (GAME_ADVENTURE & GAME_ROLE_PLAYING) had higher average listing
@@ -226,7 +225,8 @@ conclu_tab <- mainPanel(
           Google Play Store and Games in the Apple App Store, because those
           categories are heavily populated with apps making it harder for new
           apps to gain popularity. The scatter plot shows which categories will
-          give the avgerage highest rating with the highest average listing price,
+          give the avgerage highest rating
+          with the highest average listing price,
           thus maximizing revenue because more people will download it. It is
           GAME_ADVENTURE & GAME_PLAYING for the Google Play Store and medical
           for the Apple App Store.")
@@ -246,30 +246,45 @@ member_main <- fluidPage(
   tags$p("Hello! My name is Danell and I am currently a junior at UW.
          My intended major is Informatics / Applied Mathematics.
          Fun Facts: I love playing tennis and video games in my freetime."),
-  tags$img(src = "https://i.ibb.co/FhvCmDg/34711218-629539500749705-3708470244507910144-n.jpg", width = 324, height = 324),
+  tags$img(
+    src =
+      "https://i.ibb.co/FhvCmDg/
+    34711218-629539500749705-3708470244507910144-n.jpg",
+    width = 324, height = 324
+  ),
   # member 2
   tags$div(h3("Edward Sung")),
   tags$p("Hello, my name is Edward. I am currently a sophomore at UW.
          My intended major is Informatics.
          Fun Facts: Please subscribe my Youtube Channel and follow my
          photography account: edwardphotholic."),
-  tags$img(src = "https://i.ibb.co/b24ddrw/IMG-6860-2.jpg", width = 308, height = 305),
+  tags$img(
+    src = "https://i.ibb.co/b24ddrw/IMG-6860-2.jpg",
+    width = 308, height = 305
+  ),
   # member 3
   tags$div(h3("Alex")),
-  tags$p("Hi! My name is Alex. I am currently a senior at the 
+  tags$p("Hi! My name is Alex. I am currently a senior at the
          University Washington. I am a Interdisciplinary Visual
          Arts major with a minor in DXARTS, Informatics, and
-         Art History. 
+         Art History.
          Fun Facts: I am a travel filmmaker and photographer and
          currently the lead creative videographer/photographer at
          UW Recreation. Checkout my Instagram: @Alex._Chen"),
-  tags$img(src = "https://i.ibb.co/Sy3C38H/Alex.jpg", width = 265, height = 332),
+  tags$img(
+    src = "https://i.ibb.co/Sy3C38H/Alex.jpg",
+    width = 265, height = 332
+  ),
   # member 4
   tags$div(h3("Rhea")),
-  tags$p("Hi! My name is Rhea and I'm a sophomore here at the University of Washington.
+  tags$p("Hi! My name is Rhea and I'm a sophomore
+          here at the University of Washington.
           I'm currently majoring in Electrical Engineering and Psychology.
           Fun Fact: I was almost kidnapped as a child."),
-  tags$img(src = "https://i.ibb.co/Nt7rvmp/IMG-F3088-B286-CBE-1.jpg", width = 300, height = 370)
+  tags$img(
+    src = "https://i.ibb.co/Nt7rvmp/IMG-F3088-B286-CBE-1.jpg",
+    width = 300, height = 370
+  )
 )
 ########################################
 ########################################
@@ -277,13 +292,13 @@ member_main <- fluidPage(
 library(shinythemes)
 ui <- fluidPage(
   theme = shinytheme("superhero"),
-  navbarPage("INFO 201 Final",
-  tabPanel("Introduction", main),
-  tabPanel("Pie Chart", tab_1),
-  tabPanel("Bar Chart", tab_2),
-  tabPanel("Scatterplot", tab_3),
-  tabPanel("Conclusion", conclu_tab),
-  tabPanel("About us", member_main)
-    )
-
+  navbarPage(
+    "INFO 201 Final",
+    tabPanel("Introduction", main),
+    tabPanel("Pie Chart", tab_1),
+    tabPanel("Bar Chart", tab_2),
+    tabPanel("Scatterplot", tab_3),
+    tabPanel("Conclusion", conclu_tab),
+    tabPanel("About us", member_main)
+  )
 )
