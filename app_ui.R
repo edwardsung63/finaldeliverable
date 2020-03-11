@@ -269,13 +269,17 @@ member_main <- fluidPage(
   tags$img(src = "https://i.ibb.co/Sy3C38H/Alex.jpg", width = 265, height = 332),
   # member 4
   tags$div(h3("Rhea")),
-  tags$p("")
+  tags$p("Hi! My name is Rhea and I'm a sophomore here at the University of Washington.
+          I'm currently majoring in Electical Engineering and Psychology.
+          Fun Fact: I was almost kidnapped as a child."),
+  tags$img(src = "https://i.ibb.co/Nt7rvmp/IMG-F3088-B286-CBE-1.jpg", width = 300, height = 370)
 )
 ########################################
 ########################################
 # adding theme for the shinyApp interface
 library(shinythemes)
 ui <- fluidPage(
+  includeCSS("styles.css"),
   theme = shinytheme("superhero"),
   navbarPage("INFO 201 Final",
   tabPanel("Main table", main),
