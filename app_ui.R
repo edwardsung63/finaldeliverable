@@ -2,9 +2,8 @@ library(ggplot2)
 
 main <- fluidPage(
   tags$div(h1("App Store & Google Play Comparison")),
-  tags$img(src="https://www.hallmanagementgroup.com/wp-content
-                /uploads/2018/10/google-play-app-store-badges-5926
-                dec63df78cbe7eaf4f9e.jpg", width = 600, height = 400),
+  tags$img(
+    src="https://www.hallmanagementgroup.com/wp-content/uploads/2018/10/google-play-app-store-badges-5926dec63df78cbe7eaf4f9e.jpg", width = 600, height = 400),
   textInput(
     inputId = "username",
     label = h3("Type in your name")
@@ -203,14 +202,15 @@ member_main <- fluidPage(
 ########################################
 library(shinythemes) 
 ui <- fluidPage(
-  theme = shinytheme("superhero"),
+  includeCSS("styles.css"),
+  theme = shinytheme("simplex"),
   navbarPage("INFO 201 Final",
-    tabPanel("Main table", main),
-    tabPanel("About us", member_main),
-    tabPanel("Pie Chart", tab_1),
-    tabPanel("Histogram", tab_2),
-    tabPanel("Scatterplot", tab_3),
-    tabPanel("Conclusion", conclu_tab)
+  tabPanel("Main table", main),
+  tabPanel("About us", member_main),
+  tabPanel("Pie Chart", tab_1),
+  tabPanel("Histogram", tab_2),
+  tabPanel("Scatterplot", tab_3),
+  tabPanel("Conclusion", conclu_tab)
     )
 )
 
