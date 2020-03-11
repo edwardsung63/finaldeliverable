@@ -5,11 +5,6 @@ library(ggplot2)
 main <- fluidPage(
   tags$div(h1("App Store & Google Play Comparison")),
   tags$img(src = "https://i.ibb.co/wSSv8zQ/f95x3MR.png"),
-  textInput(
-    inputId = "username",
-    label = h3("Type in your name")
-  ),
-  textOutput(outputId = "out_message"),
   tags$div(h2("Introduction")),
   tags$p(sep = "\n", "As a result of smartphones slowly
          becoming a crucial part of modern day society,
@@ -64,7 +59,7 @@ tab_1_options <- sidebarPanel(
 tab_1_main <- mainPanel(
   plotlyOutput("pie"),
   tags$p("The pie chart visually shows the distribution of
-          downloads of apps from each age group. The size and
+          spending habits from each age group. The size and
           proportion of the categories in the pie chart easily
           show which app categories are most popular in each age
           group.")
@@ -134,7 +129,8 @@ tab_3_main <- mainPanel(
           correlation between the average listing price and
           the average rating of apps. The listing price of apps
           is a factor that will affect whether someone is willing 
-          to download that app.")
+          to download that app. 
+          There is an option to include free apps in the calculation.")
   
 )
 # conbining them together
@@ -250,6 +246,7 @@ member_main <- fluidPage(
   tags$p("Hello! My name is Danell and I am currently a junior at UW.
          My intended major is Informatics / Applied Mathematics.
          Fun Facts: I love playing tennis and video games in my freetime."),
+  tags$img(src = "https://i.ibb.co/FhvCmDg/34711218-629539500749705-3708470244507910144-n.jpg", width = 324, height = 324),
   # member 2
   tags$div(h3("Edward Sung")),
   tags$p("Hello, my name is Edward. I am currently a sophomore at UW.
@@ -270,7 +267,7 @@ member_main <- fluidPage(
   # member 4
   tags$div(h3("Rhea")),
   tags$p("Hi! My name is Rhea and I'm a sophomore here at the University of Washington.
-          I'm currently majoring in Electical Engineering and Psychology.
+          I'm currently majoring in Electrical Engineering and Psychology.
           Fun Fact: I was almost kidnapped as a child."),
   tags$img(src = "https://i.ibb.co/Nt7rvmp/IMG-F3088-B286-CBE-1.jpg", width = 300, height = 370)
 )
@@ -279,10 +276,9 @@ member_main <- fluidPage(
 # adding theme for the shinyApp interface
 library(shinythemes)
 ui <- fluidPage(
-  includeCSS("styles.css"),
   theme = shinytheme("superhero"),
   navbarPage("INFO 201 Final",
-  tabPanel("Main table", main),
+  tabPanel("Introduction", main),
   tabPanel("Pie Chart", tab_1),
   tabPanel("Bar Chart", tab_2),
   tabPanel("Scatterplot", tab_3),
