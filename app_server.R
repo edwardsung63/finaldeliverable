@@ -58,7 +58,7 @@ server <- function(input, output) {
       xlab("Category") +
       geom_bar(stat = "identity", width = 0.8)
 
-    fig <- ggplotly(fig)
+    fig <- ggplotly(fig, tooltip = c("x", "y"))
     fig <- fig %>% layout(
       xaxis = list(title = ~Category, tickangle = 270),
       paper_bgcolor = "#8CACC0"

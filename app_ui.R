@@ -6,7 +6,7 @@ main <- fluidPage(
   tags$div(h1("App Store & Google Play Comparison")),
   tags$img(src = "https://i.ibb.co/wSSv8zQ/f95x3MR.png"),
   tags$div(h2("Introduction")),
-  tags$p(sep = "\n", "As a result of smartphones slowly
+  tags$p("As a result of smartphones slowly
          becoming a crucial part of modern day society,
          the demand for mobile applications has increased
          greatly. We have downloaded two different datasets
@@ -61,8 +61,8 @@ tab_1_main <- mainPanel(
   tags$p("The pie chart visually shows the distribution of
           spending habits from each age group. The size and
           proportion of the categories in the pie chart easily
-          show which app categories are most popular in each age
-          group.")
+          show which app categories create the most
+          revenue in each age group.")
 )
 # combining them together
 tab_1 <- sidebarLayout(
@@ -215,25 +215,35 @@ conclu_tab <- mainPanel(
   tags$div(h3("Takeaways")),
   tags$p("After analyzing these three charts app developers are able
           to determine what factors will maximize their chances of
-          developing a successfull app. The pie chart shows that the most
-          popular category for all ages in the Apple App Store is games,
-          while in the Google Play Store it shifts from games to Sports
-          and Entertainment as the age group matures. These are the categories
-          that should be targeted for based on what the target audience's
-          age group. The bar chart shows that app developers should be
-          cautious in developing apps in the Education category for the
-          Google Play Store and Games in the Apple App Store, because those
-          categories are heavily populated with apps making it harder for new
-          apps to gain popularity. The scatter plot shows which categories will
+          developing a successfull app."),
+  
+  tags$p("The pie chart shows that the category that most
+          ages spend money on in the Apple App Store is Games,
+          It reaches its peak for Games rated 9+ and then starts shifting 
+          slightly into Medical at ages 12+, and then Entertainment at ages
+          17+. For the Google Play Store for ages 4+ the most popular
+          category to spend money on is Education, at ages 9+ it shifts
+          into Games, 12+ into Sports and finally at ages 17+, Entertainment.
+          This gives excellent insight into which categories most of the revenue
+          is going into."),
+  tags$p("The scatter plot shows which categories will
           give the avgerage highest rating
           with the highest average listing price,
           thus maximizing revenue because more people will download it. It is
-          GAME_ADVENTURE & GAME_PLAYING for the Google Play Store and medical
-          for the Apple App Store.")
-)
-tab_3 <- sidebarLayout(
-  tab_3_content,
-  tab_3_main
+          GAME_ADVENTURE & GAME_PLAYING for the Google Play Store and Medical
+          for the Apple App Store. It will also give a good idea about how much 
+          money is usually spent towards these categories while also giving the 
+          average rating given by the consumer. This information is important
+          if the developer would like to excel in ratings along with revenue.
+          Applications that are rated high and that are also cheap tend to get
+          more downloads and the opposite is true for applications that are rated
+          low and are costly."),
+  tags$p("The last takeaway that the data helps us visualize is that the bar chart
+          helps aid in deciding which category to create an application in.
+          For the Apple App Store the most populated category is Games and for the 
+          Goolge Play Store it is Education. Knowing this can help you target what 
+          either is popular or what is not popular hoping to gain a big consumer base
+          since the category has not been touched much.")
 )
 ########################################
 ########################################
