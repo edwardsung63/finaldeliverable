@@ -86,8 +86,7 @@ server <- function(input, output) {
         "<br>Total number of applications: ", count
       ),
       color = ~ eval(parse(text = input$paid_free)),
-      size = ~ eval(parse(text = input$paid_free)),
-      scatter = m
+      size = ~ eval(parse(text = input$paid_free))
     ) %>%
       colorbar(title = "Price in $USD") %>%
       layout(

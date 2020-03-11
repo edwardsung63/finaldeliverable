@@ -21,7 +21,7 @@ main <- fluidPage(
          analytics to help developers understand existing strategies
          and categories that drive growth and retention of
          future app users."),
-  tags$div(h2("Overview - Questions")),
+  tags$div(h2("Overview - Questions we hope to answer")),
   tags$p(sep = "\n", "What categories of apps are the most downloaded?"),
   tags$p("What type of mobile games generate the most revenue?"),
   tags$p("What factors determine the overall success of a mobile game?"),
@@ -216,10 +216,10 @@ conclu_tab <- mainPanel(
   tags$p("After analyzing these three charts app developers are able
           to determine what factors will maximize their chances of
           developing a successfull app."),
-  
+
   tags$p("The pie chart shows that the category that most
           ages spend money on in the Apple App Store is Games,
-          It reaches its peak for Games rated 9+ and then starts shifting 
+          It reaches its peak for Games rated 9+ and then starts shifting
           slightly into Medical at ages 12+, and then Entertainment at ages
           17+. For the Google Play Store for ages 4+ the most popular
           category to spend money on is Education, at ages 9+ it shifts
@@ -231,18 +231,24 @@ conclu_tab <- mainPanel(
           with the highest average listing price,
           thus maximizing revenue because more people will download it. It is
           GAME_ADVENTURE & GAME_PLAYING for the Google Play Store and Medical
-          for the Apple App Store. It will also give a good idea about how much 
-          money is usually spent towards these categories while also giving the 
+          for the Apple App Store. It will also give a good idea about how much
+          money is usually spent towards these categories while also giving the
           average rating given by the consumer. This information is important
           if the developer would like to excel in ratings along with revenue.
           Applications that are rated high and that are also cheap tend to get
-          more downloads and the opposite is true for applications that are rated
+          more downloads and the opposite is true for applications
+          that are rated
           low and are costly."),
-  tags$p("The last takeaway that the data helps us visualize is that the bar chart
-          helps aid in deciding which category to create an application in.
-          For the Apple App Store the most populated category is Games and for the 
-          Goolge Play Store it is Education. Knowing this can help you target what 
-          either is popular or what is not popular hoping to gain a big consumer base
+  tags$p("The last takeaway that the data helps us
+          visualize is that the bar chart
+          helps aid in deciding which category to create an
+          application in.
+          For the Apple App Store the most populated category
+          is Games and for the
+          Goolge Play Store it is Education. Knowing this can
+          help you target what
+          either is popular or what is not popular hoping to gain a
+          big consumer base
           since the category has not been touched much.")
 )
 ########################################
