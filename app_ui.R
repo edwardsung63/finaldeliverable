@@ -63,31 +63,11 @@ tab_1_options <- sidebarPanel(
 # the main tab on the page 
 tab_1_main <- mainPanel(
   plotlyOutput("pie"),
-  tags$p("The reason why we created pie chart is to
-  show the distributions of spending on apps in
-  different age groups. As the size and proportion
-  showed by pie charts, we can easily get the idea
-  of which category attracts relatively more or less
-  people. As we can see from the charts, top few
-  categories in Google Play Store are mostly education
-  apps for ages 4+, games apps for ages 12+, sports apps
-  for ages 9+ and 17+. For the education apps downloaded
-  by ages 4+, we can assume that parents or gaurdians
-  might be the users who download the apps for their kids.
-  For the Google Play Store pie chart, we can see that there
-  are a lot more categories than that in the Apple pie chart.
-  Most of them seem repeated a subcategory of the main category.
-  "),
-  tags$p("For the Apple App Store pie chart data, it
-         also follows a similar trend where for ages 4+ a
-         majority of spending is towards the education or
-         games category. It mirrors what we described that
-         parents buy educational apps to encourage early
-         learning. We can see that at ages 9+, 12+, and 17+,
-         that games have become a huge spending category.
-         For ages 17+, they tend to spend more towards
-         productivity, social networking, food and drinks
-         than their younger counterparts.")
+  tags$p("The pie chart visually shows the distribution of
+          downloads of apps from each age group. The size and
+          proportion of the categories in the pie chart easily
+          show which app categories are most popular in each age
+          group.")
 )
 # combining them together
 tab_1 <- sidebarLayout(
@@ -113,23 +93,10 @@ tab_2_content <- sidebarPanel(
 # main tab on the page
 tab_2_main <- mainPanel(
   plotlyOutput("bar_chart"),
-  tags$p("For this plot we created a bar chart for
-         both Google Play Store and Apple App Store
-         that shows the number of applications that
-         were uploaded into each category. This chart
-         was included to visually show which categories
-         were more saturated with apps. For the Google
-         Play Store it was 'Education' and for the Apple
-         App Store it was 'Games'. Using these charts app
-         developers are able to determine which genre of
-         apps they should be developing for. Since the
-         categories that are heavily saturated with the
-         same types of apps will make it harder for
-         individual apps to stand out amongst the others.
-         The app will become lost amid the sea of similar
-         apps making it difficult to find on each respective
-         app store, ultimately impacting the number of
-         downloads and revenue it will receive.")
+  tags$p("A bar chart was created for both Google Play Store 
+          and Apple App Store to show the number of applications 
+          that were uploaded into each category. This chart visually 
+          shows which categories were the most and least app populated.")
 )
 # conbining two bars together
 tab_2 <- sidebarLayout(
@@ -163,26 +130,11 @@ tab_3_content <- sidebarPanel(
 # main tab on the page
 tab_3_main <- mainPanel(
   plotlyOutput("scatter"),
-  tags$p("This scatter plot is created to show the
+  tags$p("This scatter plot was created to show the
           correlation between the average listing price and
           the average rating of apps. The listing price of apps
-          will affect whether someone is willing to download that
-          app, if the price is too high that will usually result
-          in people not downloading the app. By using this plot
-          developers are able to see how satisfied people are in
-          comparison with the listed price to determine what price
-          to list their apps to maximize the chances of success.
-          For the Google Play Store we can see that games tend
-          to cost more while also obtaining high ratings.
-          Applications that were cheap and also had high ratings
-          were applications within the books and reference category.
-          For the Apple App Store, applications in the medical
-          category tend to cost a lot more than other categories
-          but were also rated low. This could be that medical
-          information is highly profitable but were not meeting
-          to the consumers needs. Apps that did well in ratings
-         were also lower priced. These categories were
-         productivity and music.")
+          is a factor that will affect whether someone is willing 
+          to download that app.")
   
 )
 # conbining them together
@@ -196,23 +148,97 @@ tab_3 <- sidebarLayout(
 conclu_tab <- mainPanel(
   tags$div(h1("Conclusion")),
   tags$div(h3("Pie Chart")),
-  tags$div(h3("Histogram Chart")),
-  tags$div(h3("Scatter Plot"))
+  tags$p("The pie chart visually shows the distribution of
+          downloads of apps from each age group and the size of the
+          slice easily shows which categories are most popular in
+          each age group. This will help developers target which
+          app genre they should develop based on their target
+          audience's age.
+          For the Google Play Store it seems that the most popular
+          category for age 4+ is education, which shows that parents
+          are downloading educational apps for growing children. And
+          as the consumer mature's their interests also shifts to
+          Game Role Playing at age 9+, Sports at age 12+, and 
+          Entertainment at 17+.
+          For the Apple App Store at age 4+ the most popular category
+          is Games, this could be because parents are giving their
+          young children games to stimulate their brains and keep them
+          busy. And at age 9+ its Games, 12+ is Games, 17+ is Games. This
+          pattern shows that users of the Apple App Store are more inclined
+          to download games compared to the other categories. This will
+          help developers decide what genre of apps to develop based on
+          their target audience. For the Google Play Store it would be
+          dependant on their age, while in the Apple App Store it would
+          be better to develop a game."),
+  tags$div(h3("Bar Chart")),
+  tags$p("After anaylzing the bar chart the most populated app category
+          in the Google Play Store is the Education category with 32247 
+          apps, and for the Apple App Store it was the Games category 
+          with 3862 apps. By using this bar chart app developers are 
+          able to determine which app category they should develop apps 
+          for. Since the categories that are heavily saturated with apps 
+          will make it harder for individual apps to stand out amongst the
+          other apps. The app could become lost amongst the sea of
+          similar apps, making it difficult for consumers to find it
+          on the app store, ultimately impacting the number of
+          downloads and revenue developers will receive.
+          This chart shows that it will be harder to gain popularity
+          for newly developed apps in the Education category for the
+          Google Play Store and in the Games category for the Apple
+          App Store."),
+  tags$div(h3("Scatter Plot")),
+  tags$p("The scatter plot shows visually the comparison between the
+          average price of apps and the average rating of apps. 
+          The listing price of apps is a factor that will affect whether 
+          someone is willing to download that app, if the price is too high 
+          it will usually result in less people downloading the app. By 
+          using this plot, developers are able to see how satisfied 
+          people are with the app in comparison with the listed 
+          price to determine the optimal listing price for their apps 
+          to maximize the chances of success.
+          In the Google Play Store we can see that the game categories
+          (GAME_ADVENTURE & GAME_ROLE_PLAYING) had higher average listing
+          prices than the other app categories, but still obtaining a higher
+          app average rating. This indicates that consumers are willing to
+          pay more for game apps, because they will get more satisfaction
+          out of it than other genre of apps on average.
+          For the Apple App Store, applications in the medical
+          category tend to cost more than the other categories,
+          and had a average rating of 3.37 out of 5. This rating was
+          not as low as other categories that charged less, this can
+          indicate that consumers are willing to pay more for medical
+          applications that provide health information. A possible
+          reason for this is that consumers may choose to utilize
+          medical apps over going to a physical doctor due to factors
+          such as medical costs and convenience.
+          category tend to cost a lot more than other categories
+          but were also rated low. This could be that medical
+          information is highly profitable but were not meeting
+          to the consumers needs. Apps that did well in ratings
+          were also lower priced. These categories were
+          productivity and music."),
+  tags$div(h3("Takeaways")),
+  tags$p("After analyzing these three charts app developers are able
+          to determine what factors will maximize their chances of
+          developing a successfull app. The pie chart shows that the most
+          popular category for all ages in the Apple App Store is games,
+          while in the Google Play Store it shifts from games to Sports
+          and Entertainment as the age group matures. These are the categories
+          that should be targeted for based on what the target audience's
+          age group. The bar chart shows that app developers should be
+          cautious in developing apps in the Education category for the
+          Google Play Store and Games in the Apple App Store, because those
+          categories are heavily populated with apps making it harder for new
+          apps to gain popularity. The scatter plot shows which categories will
+          give the avgerage highest rating with the highest average listing price,
+          thus maximizing revenue because more people will download it. It is
+          GAME_ADVENTURE & GAME_PLAYING for the Google Play Store and medical
+          for the Apple App Store.")
 )
 tab_3 <- sidebarLayout(
   tab_3_content,
   tab_3_main
 )
-########################################
-########################################
-# conclusion tab
-conclu_tab <- mainPanel(
-  tags$div(h1("Conclusion")),
-  tags$div(h3("Pie Chart")),
-  tags$div(h3("Histogram Chart")),
-  tags$div(h3("Scatter Plot"))
-)
-
 ########################################
 ########################################
 # about us
