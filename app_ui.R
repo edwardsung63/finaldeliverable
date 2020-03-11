@@ -252,7 +252,7 @@ member_main <- fluidPage(
 library(shinythemes)
 ui <- fluidPage(
   includeCSS("styles.css"),
-  theme = shinytheme("simplex"),
+  theme = shinytheme("superhero"),
   navbarPage("INFO 201 Final",
   tabPanel("Main table", main),
   tabPanel("About us", member_main),
